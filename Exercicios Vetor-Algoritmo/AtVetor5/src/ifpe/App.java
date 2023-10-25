@@ -9,7 +9,7 @@ public class App {
 			Scanner input = new Scanner(System.in);
 			double somaVista = 0;
 			double somaPrazo = 0;
-					System.out.println("Digite o tipo de transação:\n[0] - Avista\n[1] - Prazo");
+			System.out.println("Digite o tipo de transação:\n[0] - Avista\n[1] - Prazo");
 			String codigo = input.nextLine();
 
 			System.out.println("Digite o valor da transação: ");
@@ -24,6 +24,8 @@ public class App {
 				System.out.println("Digite um valor valido: ");
 				break;
 			}
+		System.out.println("Soma vista: " + somaVista);
+		System.out.println("Soma vista: ");
 		}
 	}
 
