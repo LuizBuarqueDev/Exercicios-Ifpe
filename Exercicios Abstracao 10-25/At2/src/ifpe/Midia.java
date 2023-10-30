@@ -1,6 +1,11 @@
 package ifpe;
 
+import java.util.Random;
+
 public class Midia {
+	
+	Random random = new Random();
+	
 	private int codigo;
 	private double preco;
 	private String nome;
@@ -15,18 +20,22 @@ public class Midia {
 		this.preco = preco;
 		this.nome = nome;
 	}
-
+	
 	public  String getTipo() {
 		return getClass().getSimpleName();
 	}
-
-	public  String getDetalhes() {
+	
+	public  String getDetalhe() {
 		return null;
 	}
-
+	
 	public void printDados() {
 		System.out.println("Tipo: " + getTipo());
-		System.out.println("Detalhes: " + getDetalhes());
+		System.out.println("Detalhe: " + getDetalhe());
+	}
+	
+	public  void inserirDados (String nome) {
+		
 	}
 
 	public int getCodigo() {
@@ -52,4 +61,5 @@ public class Midia {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
 }

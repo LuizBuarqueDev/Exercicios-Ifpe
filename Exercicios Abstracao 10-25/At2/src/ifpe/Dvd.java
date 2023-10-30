@@ -1,6 +1,6 @@
 package ifpe;
 
-public class Dvd extends Midia {
+public class Dvd extends Midia{
 	
 	private int nFaixas;
 
@@ -9,25 +9,25 @@ public class Dvd extends Midia {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Dvd(int codigo, double preco, String nome, int nFaixas) {
+	public Dvd(int codigo, double preco, String nome , int nFaixas) {
 		super(codigo, preco, nome);
 		this.nFaixas = nFaixas;
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public String getDetalhes() {
+	@Override	
+	public String getDetalhe() {
 		// TODO Auto-generated method stub
 		return "Dvd [nFaixas=" + nFaixas + ", Codigo =" + getCodigo() + ", Preco =" + getPreco()
 		+ ", Nome =" + getNome() + "]";
 	}
-	
-	public void inserirDados(int codigo, double preco, String nome, int nFaixas) {
-		// TODO Auto-generated method stub
-		setCodigo(codigo);
-		setPreco(preco);
+
+	@Override
+	public void inserirDados(String nome) {
+		setCodigo(random.nextInt(1000));
+		setPreco(random.nextDouble(50.0));
 		setNome(nome);
-		setnFaixas(nFaixas);
+		setnFaixas(random.nextInt(50));
 	}
 
 	public int getnFaixas() {
