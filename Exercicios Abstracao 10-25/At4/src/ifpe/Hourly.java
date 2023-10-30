@@ -23,6 +23,8 @@ public class Hourly extends Employee{
 	}
 	
 	private void insertData() {
+		addHours(hours);
+		
 	}
 
 }

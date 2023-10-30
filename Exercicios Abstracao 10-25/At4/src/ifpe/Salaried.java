@@ -15,7 +15,7 @@ public class Salaried extends Employee {
 		return super.getPay();
 	}
 	
-	private void inserirData() {
+	private void insertData() {
 		// TODO Auto-generated method stub
 
 	}
