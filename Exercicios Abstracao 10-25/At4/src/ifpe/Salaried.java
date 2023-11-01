@@ -1,22 +1,23 @@
 package ifpe;
 
-public class Salaried extends Employee {
-	
-	private double  salary;
+import java.util.Scanner;
 
-	public Salaried(String nome, double salary) {
-		super(nome);
-		this.salary = salary;
-	}
-	
-	@Override
-	public double getPay() {
-		// TODO Auto-generated method stub
-		return super.getPay();
-	}
-	
-	private void insertData() {
-		// TODO Auto-generated method stub
+class Salaried extends Employee {
+    private double salary;
 
-	}
+    public Salaried(String name, double salary) {
+        super(name);
+        this.salary = salary;
+    }
+
+    @Override
+    public double getPay() {
+        return salary;
+    }
+
+    public void insertData() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite o salário do funcionário:");
+        this.salary = scanner.nextDouble();
+    }
 }

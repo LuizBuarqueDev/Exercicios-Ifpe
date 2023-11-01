@@ -1,30 +1,31 @@
 package ifpe;
 
-public class Hourly extends Employee{
-	
-	private double hourlyRate;
-	private double hours;
-	public Hourly(String nome, double hourlyRate, double hours) {
-		super(nome);
-		this.hourlyRate = hourlyRate;
-		this.hours = hours;
-	}
-	
-	@Override
-	public double getPay() {
-		// TODO Auto-generated method stub
-		return super.getPay();
-	}
-	
-	private void addHours(double hours) {
-		this.hours += hours;
-		// TODO Auto-generated method stub
+import java.util.Scanner;
 
-	}
-	
-	private void insertData() {
-		addHours(hours);
-		
-	}
+class Hourly extends Employee {
+    private double hourlyRate;
+    private double hours;
 
+    public Hourly(String name, double hourlyRate) {
+        super(name);
+        this.hourlyRate = hourlyRate;
+    }
+
+    public void addHours(double hours) {
+        this.hours += hours;
+    }
+
+    @Override
+    public double getPay() {
+        return hourlyRate * hours;
+    }
+
+    public void insertData() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite a taxa horária do funcionário:");
+        this.hourlyRate = scanner.nextDouble();
+
+        System.out.println("Digite o número de horas trabalhadas pelo funcionário:");
+        this.hours = scanner.nextDouble();
+    }
 }

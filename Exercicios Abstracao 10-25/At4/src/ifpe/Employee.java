@@ -1,20 +1,17 @@
 package ifpe;
 
-public  class Employee {
-	
-	private String nome;
+class Employee {
+    private String name;
 
-	public Employee(String nome) {
-		super();
-		this.nome = nome;
-	}
-	
-	public double getPay() {
-		return 0;
-	}
-	
-	private void printPay() {
-		// TODO Auto-generated method stub
+    public Employee(String name) {
+        this.name = name;
+    }
 
-	}
+    public double getPay() {
+        return 0;
+    }
+
+    public void printPay() {
+        System.out.println("Nome: " + name + ", Salário: " + getPay());
+    }
 }
