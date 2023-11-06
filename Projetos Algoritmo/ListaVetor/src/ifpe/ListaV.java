@@ -27,7 +27,6 @@ public class ListaV {
 		// Esse metodo ira fazer uma copia do vetor usando uma variavel temporaria, os
 		// elementos nulos serão removidos do vetor
 		String[] tempVetor = new String[tamanho - 1];
-		
 		int j = 0;
 		for (int i = 0; i < tamanho; i++) {
 			if (vetor[i] != null) {
@@ -53,12 +52,12 @@ public class ListaV {
 	public void add(int posicao, String elemento) {
 		// Esse metodo empurra os elementos para o final da lista abrindo espaço para
 		// adição do novo elememto
-		tornarMaior();
-		for (int i = tamanho; i > posicao; i--) {
-			vetor[i] = vetor[i - 1];
-		}
-		vetor[posicao - 1] = elemento;
-		tamanho++;
+	    tornarMaior();
+	    for (int i = tamanho - 1; i >= posicao; i--) {
+	        vetor[i + 1] = vetor[i];
+	    }
+	    vetor[posicao -1] = elemento;
+	    tamanho++;
 	}
 
 	public void set(int posicao, String elemento) {
