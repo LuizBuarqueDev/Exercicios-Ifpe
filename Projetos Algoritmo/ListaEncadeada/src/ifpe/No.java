@@ -2,12 +2,8 @@ package ifpe;
 
 public class No {
 	
-	public String dado;
-	public No next;
-	
-	public No() {
-		// TODO Auto-generated constructor stub
-	}
+	private String dado;
+	private No next;
 
 	public No(String dado) {
 		super();
