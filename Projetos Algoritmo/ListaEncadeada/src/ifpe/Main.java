@@ -13,6 +13,7 @@ public class Main {
 		listaEncadeada.print();
 		System.out.println("Size: " + listaEncadeada.size());
 		listaEncadeada.add(5, "2.0");
+		listaEncadeada.add(1,"1.1");
 		System.out.println("Get: " + listaEncadeada.get(3));
 		listaEncadeada.print();
 	}

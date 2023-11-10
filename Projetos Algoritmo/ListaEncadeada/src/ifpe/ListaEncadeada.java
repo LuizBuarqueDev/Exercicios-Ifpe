@@ -3,13 +3,14 @@ package ifpe;
 public class ListaEncadeada {
 
 	private No head;
-
 	private int tamanho;
+	private No noTemp;
 
 	public ListaEncadeada() {
 		super();
 		this.head = null;
 		this.tamanho = 0;
+		this.noTemp = null;
 	}
 
 	public void add(String dado) {
@@ -17,7 +18,7 @@ public class ListaEncadeada {
 		if (head == null) {
 			head = novoNo;
 		} else {
-			No noTemp = head;
+			noTemp = head;
 			while (noTemp.getNext() != null) {
 				noTemp = noTemp.getNext();
 			}
@@ -37,7 +38,7 @@ public class ListaEncadeada {
 			novoNo.setNext(head);
 			head = novoNo;
 		} else {
-			No noTemp = head;
+			noTemp = head;
 			for (int i = 0; i < index - 1; i++) {
 				noTemp = noTemp.getNext();
 			}
@@ -57,7 +58,7 @@ public class ListaEncadeada {
 
 	public String get(int entrada) {
 		int index = 0;
-		No noTemp = head;
+		noTemp = head;
 		while (index != entrada - 1) {
 			noTemp = noTemp.getNext();
 			index++;
@@ -67,7 +68,7 @@ public class ListaEncadeada {
 	}
 
 	public void print() {
-		No noTemp = head;
+		noTemp = head;
 		while (noTemp != null) {
 			System.out.print(noTemp.getDado() + " ");
 			noTemp = noTemp.getNext();
