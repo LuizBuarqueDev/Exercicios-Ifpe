@@ -58,9 +58,7 @@ public class ListaEncadeada {
 			for (int i = 0; i < entrada - 1; i++) {
 				noTemp = noTemp.getNext();
 			}
-			No noTrash = noTemp.getNext();
 			noTemp.setNext(noTemp.getNext().getNext());
-			noTrash = null;
 		}
 	}
 
