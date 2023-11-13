@@ -13,10 +13,17 @@ public class ListaDuplamenteEncadeada {
 		tamanho = 0;
 		this.noTemp = null;
 	}
-	
+
 	public void add(String dado) {
-		if(head == null) {
-			
-		}	
+		No novoNo = new No(dado);
+		if (head == null) {
+			head = novoNo;
+			end = novoNo;
+		} else {
+			end.setNext(novoNo);
+			novoNo.setPrev(end);
+			end = novoNo;
+		}
+		tamanho++;
 	}
 }
