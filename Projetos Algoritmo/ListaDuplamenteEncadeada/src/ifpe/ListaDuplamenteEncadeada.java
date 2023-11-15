@@ -14,6 +14,27 @@ public class ListaDuplamenteEncadeada {
 		this.noTemp = null;
 	}
 
+	// Metodo auxiliar
+	private No pegarIndex(int index) {
+		if (index < 0 || index >= tamanho) {
+			throw new IndexOutOfBoundsException("Indice invalido");
+		}
+
+		if (index < tamanho / 2) {
+			noTemp = head;
+			for (int i = 0; i < index; i++) {
+				noTemp = noTemp.getNext();
+			}
+
+		} else {
+			noTemp = end;
+			for (int i = 0; i > index; i--) {
+				noTemp = noTemp.getNext();
+			}
+		}
+		return noTemp;
+	}
+
 	public void add(String dado) {
 		No novoNo = new No(dado);
 		if (head == null) {
@@ -33,7 +54,7 @@ public class ListaDuplamenteEncadeada {
 		}
 		No novoNo = new No(dado);
 		index--;
-		if (index == 1) {
+		if (index == 0) {
 			novoNo.setNext(head);
 			head.setPrev(novoNo);
 			head = novoNo;
@@ -55,4 +76,46 @@ public class ListaDuplamenteEncadeada {
 
 		tamanho++;
 	}
+
+	public void remove(int index) {
+		if (head == null || tamanho <= 0) {
+			throw new NullPointerException("A lista esta vazia");
+		}
+		index--;
+		if (index == 0) {
+			head = head.getNext();
+			if (head != null) {
+				head.setPrev(null);
+			} else {
+				end = null;
+			}
+
+		} else if (index == tamanho - 1) {
+			end = end.getPrev();
+			end.setNext(null);
+		} else {
+			noTemp = head;
+			for (int i = 0; i < index - 1; i++) {
+				noTemp = noTemp.getNext();
+			}
+			noTemp.setNext(noTemp.getNext().getNext());
+			noTemp.getNext().setPrev(noTemp);
+		}
+		
+		tamanho--;
+	}
+
+	public void set(int index , String entrada) {
+		if (index < 0 || index <= tamanho) {
+			throw new IndexOutOfBoundsException("Indice invalido");
+		}
+		
+		noTemp = pegarIndex(index);
+		noTemp.setDado(entrada);
+	}
+	
+	public int size() {
+		return tamanho;
+	}
+	
 }
