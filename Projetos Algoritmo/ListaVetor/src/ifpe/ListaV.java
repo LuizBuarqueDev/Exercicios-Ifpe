@@ -5,10 +5,11 @@ import java.util.Arrays;
 public class ListaV {
 
 	private String[] vetor;
-	private int tamanho = 0;
+	private int tamanho;
 
 	public ListaV() {
-		vetor = new String[tamanho];
+		this.tamanho = 0;
+		this.vetor = new String[tamanho];
 	}
 
 	// Metodos auxiliareis
@@ -36,7 +37,6 @@ public class ListaV {
 
 		}
 		vetor = tempVetor;
-		tamanho--;
 	}
 
 	// Metodos publicos
@@ -69,6 +69,7 @@ public class ListaV {
 		// Esse metodo remove um elemento de acordo com a posilcao atribuida
 		vetor[posicao - 1] = null;
 		tonarMenor();
+		tamanho--;
 	}
 	
 	public String get(int posicao) {
