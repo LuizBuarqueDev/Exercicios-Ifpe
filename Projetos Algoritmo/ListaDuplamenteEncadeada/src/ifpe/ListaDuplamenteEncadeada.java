@@ -101,21 +101,40 @@ public class ListaDuplamenteEncadeada {
 			noTemp.setNext(noTemp.getNext().getNext());
 			noTemp.getNext().setPrev(noTemp);
 		}
-		
+
 		tamanho--;
 	}
 
-	public void set(int index , String entrada) {
-		if (index < 0 || index <= tamanho) {
+	public void set(int index, String entrada) {
+		index--;
+		if (index < 0 || index >= tamanho) {
 			throw new IndexOutOfBoundsException("Indice invalido");
 		}
-		
+
 		noTemp = pegarIndex(index);
 		noTemp.setDado(entrada);
 	}
-	
+
 	public int size() {
 		return tamanho;
 	}
-	
+
+	public String get(int index) {
+		if (index < 0 || index >= tamanho) {
+			throw new IndexOutOfBoundsException("Indice invalido");
+		}
+
+		return pegarIndex(index).getDado();
+
+	}
+
+	public void print() {
+		noTemp = head;
+		while (noTemp != null) {
+			System.out.print(noTemp.getDado() + "; ");
+			noTemp = noTemp.getNext();
+		}
+		System.out.println();
+
+	}
 }
