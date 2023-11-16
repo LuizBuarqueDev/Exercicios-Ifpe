@@ -9,7 +9,7 @@ public class PilhaVetor {
 	public PilhaVetor() {
 		super();
 		this.tamanho = 0;
-		this.vetor = new String[tamanho];
+		this.vetor = new String[10];
 	}
 
 	// Metodos auxiliareis
