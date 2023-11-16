@@ -13,10 +13,10 @@ public class Main {
 
 		System.out.println("pop: " + pilha.pop());
 		
-		pilha.push("5");
-		pilha.push("6");
+		pilha.push("3");
+		pilha.push("4");
 		
-		System.out.println(pilha.size());
+		System.out.println("size: "+pilha.size());
 		
 		System.out.println("top:" + pilha.top());
 
