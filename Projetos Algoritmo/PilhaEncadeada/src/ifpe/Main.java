@@ -11,11 +11,14 @@ public class Main {
 		System.out.println("size: " + pilhaEncadeada.size());
 		
 		pilhaEncadeada.push("7");
-		
 		pilhaEncadeada.push("9");
+		
 		pilhaEncadeada.print();
+		
 		System.out.println("Pop: " + pilhaEncadeada.pop());
 		pilhaEncadeada.print();
+		
+		System.out.println("Top: " + pilhaEncadeada.top());
 		
 		System.out.println("size: " + pilhaEncadeada.size());
 		System.out.println(pilhaEncadeada.isEmpty());
