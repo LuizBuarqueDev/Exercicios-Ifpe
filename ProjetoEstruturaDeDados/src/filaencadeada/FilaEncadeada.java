@@ -31,7 +31,7 @@ public class FilaEncadeada {
 			throw new NullPointerException("Lista esta vazia");
 
 		}
-		String elemento = end.getDado();
+		String elemento = topo.getDado();
 		topo = topo.getNext();
 		tamanho--;
 		return elemento;
