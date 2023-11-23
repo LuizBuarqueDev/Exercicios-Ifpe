@@ -7,6 +7,7 @@ public class Main {
 		FilaVetor filaVetor = new FilaVetor();
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Qualquer numero invalido resultara na finalização do codigo");
+		
 		while (true) {
 			System.out.println("[1]-enqueue ; [2]-dequeue ; [3]-size ; [4]-isEmpty ; [5]-front ; [6]-print");
 

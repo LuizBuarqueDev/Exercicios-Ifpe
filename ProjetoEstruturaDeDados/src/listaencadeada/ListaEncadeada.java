@@ -63,7 +63,10 @@ public class ListaEncadeada {
 	}
 
 	public void set(int index, String entrada) {
-		if (--index == 0) {
+		if (--index < 0 || index > tamanho) {
+			throw new IndexOutOfBoundsException("Índice fora dos limites da lista.");
+		}
+		if (index == 0) {
 			head.setDado(entrada);
 		} else {
 			noTemp = head;
@@ -79,9 +82,12 @@ public class ListaEncadeada {
 	}
 
 	public String get(int entrada) {
+		if (--entrada < 0 || entrada > tamanho) {
+			throw new IndexOutOfBoundsException("Índice fora dos limites da lista.");
+		}
 		int index = 0;
 		noTemp = head;
-		while (index != entrada - 1) {
+		while (index != entrada) {
 			noTemp = noTemp.getNext();
 			index++;
 		}
