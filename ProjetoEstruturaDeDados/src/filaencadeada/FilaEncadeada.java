@@ -1,7 +1,7 @@
 package filaencadeada;
 
 public class FilaEncadeada {
-	
+
 	private No topo;
 	private No end;
 	private No noTemp;
@@ -27,6 +27,10 @@ public class FilaEncadeada {
 	}
 
 	public String dequeue() {
+		if (tamanho <= 0) {
+			throw new NullPointerException("Lista esta vazia");
+
+		}
 		String elemento = end.getDado();
 		topo = topo.getNext();
 		tamanho--;
@@ -42,6 +46,9 @@ public class FilaEncadeada {
 	}
 
 	public String front() {
+		if (tamanho <= 0) {
+			throw new NullPointerException("Lista esta vazia");
+		}
 		return topo.getDado();
 	}
 
