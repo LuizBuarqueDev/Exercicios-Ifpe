@@ -47,19 +47,20 @@ public class ListaEncadeada {
 		tamanho++;
 	}
 
-	public void remove(int entrada) {
+	public void remove(int index) {
 		if (head == null || tamanho == 0) {
 			throw new NullPointerException("A lista esta vazia");
 		}
-		if (--entrada == 0) {
+		if (--index == 0) {
 			head = head.getNext();
 		} else {
 			noTemp = head;
-			for (int i = 0; i < entrada - 1; i++) {
+			for (int i = 0; i < index - 1; i++) {
 				noTemp = noTemp.getNext();
 			}
 			noTemp.setNext(noTemp.getNext().getNext());
 		}
+		tamanho--;
 	}
 
 	public void set(int index, String entrada) {
