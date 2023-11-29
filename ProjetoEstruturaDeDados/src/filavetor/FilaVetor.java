@@ -24,8 +24,8 @@ public class FilaVetor {
 				vetorTemp[i] = vetor[(f + i) % vetor.length];
 			}
 			vetor = vetorTemp;
-			f = 0;
-			r = tamanho;
+			f = 0; // proximo elemento
+			r = tamanho; // proximo lugar vazio
 		}
 	}
 
@@ -36,8 +36,8 @@ public class FilaVetor {
 				vetorTemp[i] = vetor[(f + i) % vetor.length];
 			}
 			vetor = vetorTemp;
-			f = 0;
-			r = tamanho;
+			f = 0; // proximo elemento
+			r = tamanho; // proximo lugar vazio
 		}
 	}
 
@@ -46,10 +46,13 @@ public class FilaVetor {
 		vetor[r] = dado;
 		r = (r + 1) % vetor.length;
 		tamanho++;
-
 	}
 
 	public String dequeue() {
+		if (tamanho <= 0) {
+			throw new NullPointerException("A fila esta vazia");
+		}
+		
 		tornarMenor();
 		String elemento = vetor[f];
 		vetor[f] = null;
@@ -64,6 +67,10 @@ public class FilaVetor {
 	}
 	
 	public String front() {
+		if (tamanho <= 0) {
+			throw new NullPointerException("A fila esta vazia");
+		}
+		
 		return vetor[f];
 		
 	}
