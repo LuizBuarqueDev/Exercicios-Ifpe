@@ -1,7 +1,7 @@
 package pilhavetor;
 
 public class PilhaVetor {
-	
+
 	private String vetor[];
 	private int tamanho;
 
@@ -19,6 +19,7 @@ public class PilhaVetor {
 			for (int i = 0; i < tamanho; i++) {
 				vetorTemp[i] = vetor[i];
 			}
+			
 			vetor = vetorTemp;
 		}
 	}
@@ -32,40 +33,44 @@ public class PilhaVetor {
 					vetorTemp[j] = vetor[i];
 					j++;
 				}
+				
 			}
+			
 			vetor = vetorTemp;
 		}
 	}
-	
+
 	// Metodos principais
 
 	public void push(String entrada) {
 		tornarMaior();
 		vetor[tamanho++] = entrada;
 	}
-	
+
 	public String pop() {
 		String elemeto = top();
 		tornarMenor();
 		vetor[--tamanho] = null;
 		return elemeto;
 	}
-	
+
 	public int size() {
 		return tamanho;
 	}
-	
+
 	public boolean isEmpty() {
 		return tamanho == 0;
 	}
+
 	public String top() {
-		return vetor[tamanho-1];
+		return vetor[tamanho - 1];
 	}
 
 	public void print() {
 		for (int i = 0; i < tamanho; i++) {
 			System.out.print(vetor[i] + "; ");
 		}
+		
 		System.out.println();
 	}
 }
