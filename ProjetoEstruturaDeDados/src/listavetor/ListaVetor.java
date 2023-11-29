@@ -19,7 +19,9 @@ public class ListaVetor {
 		for (int i = 0; i < tamanho; i++) {
 			tempVetor[i] = vetor[i];
 		}
+		
 		vetor = tempVetor;
+		
 	}
 
 	private void tonarMenor() {
@@ -34,6 +36,7 @@ public class ListaVetor {
 			}
 
 		}
+		
 		vetor = tempVetor;
 	}
 
@@ -51,28 +54,29 @@ public class ListaVetor {
 		// Esse metodo empurra os elementos para o final da lista abrindo espaço para
 		// adição do novo elememto
 		tornarMaior();
-		for (int i = tamanho - 1; i >= index - 1; i--) {
+		for (int i = tamanho - 1; i > index; i--) {
 			vetor[i + 1] = vetor[i];
 		}
+		
 		vetor[--index] = elemento;
 		tamanho++;
 	}
 
 	public void set(int index, String elemento) {
 		// Esse metodo substitui um elemeto por outro
-		vetor[index - 1] = elemento;
+		vetor[--index] = elemento;
 	}
 
 	public void remove(int index) {
 		// Esse metodo remove um elemento de acordo com a posilcao atribuida
-		vetor[index - 1] = null;
+		vetor[--index] = null;
 		tonarMenor();
 		tamanho--;
 	}
 
 	public String get(int index) {
 		// Esse metodo pega apenas um elemento presente na lista
-		return vetor[index - 1];
+		return vetor[--index];
 
 	}
 
@@ -86,6 +90,7 @@ public class ListaVetor {
 		for (int i = 0; i < tamanho; i++) {
 			System.out.print(vetor[i] + ";");
 		}
+		
 		System.out.println();
 	}
 }
