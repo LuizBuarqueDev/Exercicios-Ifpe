@@ -16,9 +16,10 @@ public class FilaEncadeada {
 
 	public void enqueue(String dado) {
 		No novoNo = new No(dado);
-		if (topo == null) {
+		if (tamanho == 0) {
 			topo = novoNo;
 			end = novoNo;
+			
 		} else {
 			end.setNext(novoNo);
 			end = novoNo;
