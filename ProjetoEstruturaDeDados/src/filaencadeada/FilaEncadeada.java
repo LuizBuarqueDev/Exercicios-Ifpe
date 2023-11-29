@@ -32,6 +32,7 @@ public class FilaEncadeada {
 			throw new NullPointerException("Lista esta vazia");
 
 		}
+		
 		String elemento = topo.getDado();
 		topo = topo.getNext();
 		tamanho--;
@@ -50,12 +51,13 @@ public class FilaEncadeada {
 		if (tamanho <= 0) {
 			throw new NullPointerException("Lista esta vazia");
 		}
+		
 		return topo.getDado();
 	}
 
 	public void print() {
 		noTemp = topo;
-		for (int i = 0; i < tamanho; i++) {
+		while (noTemp != null) {
 			System.out.print(noTemp.getDado() + " ; ");
 			noTemp = noTemp.getNext();
 		}
