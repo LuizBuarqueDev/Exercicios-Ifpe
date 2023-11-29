@@ -38,20 +38,22 @@ public class ListaDuplamenteEncadeada {
 
 	public void add(String dado) {
 		NoDuplo novoNo = new NoDuplo(dado);
-		if (head == null) {
+		if (tamanho <= 0) {
 			head = novoNo;
 			end = novoNo;
+			
 		} else {
 			end.setNext(novoNo);
 			novoNo.setPrev(end);
 			end = novoNo;
 		}
+		
 		tamanho++;
 	}
 
 	public void add(int index, String dado) {
 		index--;
-		if (index < 0 || index >= tamanho) {
+		if (index < 0 || index > tamanho) {
 			throw new IndexOutOfBoundsException("Indice invalido");
 		}
 		
@@ -66,15 +68,14 @@ public class ListaDuplamenteEncadeada {
 			end.setNext(novoNo);
 			novoNo.setPrev(end);
 			end = novoNo;
+			
 		} else {
-			noTemp = head;
-			for (int i = 0; i < index - 1; i++) {
-				noTemp = noTemp.getNext();
-			}
-			novoNo.setNext(noTemp.getNext());
-			novoNo.setPrev(noTemp);
-			noTemp.getNext().setPrev(novoNo);
-			noTemp.setNext(novoNo);
+			noTemp = pegarElemento(index);
+			
+			noTemp.getPrev().setNext(novoNo);
+			novoNo.setNext(noTemp);
+			novoNo.setPrev(noTemp.getPrev());
+			noTemp.setPrev(novoNo);
 		}
 
 		tamanho++;
