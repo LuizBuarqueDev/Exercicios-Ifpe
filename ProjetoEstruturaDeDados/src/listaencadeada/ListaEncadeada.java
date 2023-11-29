@@ -17,6 +17,7 @@ public class ListaEncadeada {
 		No novoNo = new No(dado);
 		if (head == null) {
 			head = novoNo;
+			
 		} else {
 			noTemp = head;
 			while (noTemp.getNext() != null) {
@@ -36,14 +37,17 @@ public class ListaEncadeada {
 		if (index == 0) {
 			novoNo.setNext(head);
 			head = novoNo;
+			
 		} else {
 			noTemp = head;
 			for (int i = 0; i < index - 1; i++) {
 				noTemp = noTemp.getNext();
 			}
+			
 			novoNo.setNext(noTemp.getNext());
 			noTemp.setNext(novoNo);
 		}
+		
 		tamanho++;
 	}
 
@@ -51,15 +55,19 @@ public class ListaEncadeada {
 		if (head == null || tamanho == 0) {
 			throw new NullPointerException("A lista esta vazia");
 		}
+		
 		if (--index == 0) {
 			head = head.getNext();
+			
 		} else {
 			noTemp = head;
 			for (int i = 0; i < index - 1; i++) {
 				noTemp = noTemp.getNext();
 			}
+			
 			noTemp.setNext(noTemp.getNext().getNext());
 		}
+		
 		tamanho--;
 	}
 
@@ -67,13 +75,16 @@ public class ListaEncadeada {
 		if (--index < 0 || index > tamanho) {
 			throw new IndexOutOfBoundsException("Índice fora dos limites da lista.");
 		}
+		
 		if (index == 0) {
 			head.setDado(entrada);
+			
 		} else {
 			noTemp = head;
 			for (int i = 0; i < index; i++) {
 				noTemp = noTemp.getNext();
 			}
+			
 			noTemp.setDado(entrada);
 		}
 	}
@@ -82,15 +93,14 @@ public class ListaEncadeada {
 		return tamanho;
 	}
 
-	public String get(int entrada) {
-		if (--entrada < 0 || entrada > tamanho) {
+	public String get(int index) {
+		if (--index < 0 || index > tamanho) {
 			throw new IndexOutOfBoundsException("Índice fora dos limites da lista.");
 		}
-		int index = 0;
+		
 		noTemp = head;
-		while (index != entrada) {
+		for (int i = 0 ; i < index; i++) {
 			noTemp = noTemp.getNext();
-			index++;
 		}
 
 		return noTemp.getDado();
@@ -102,6 +112,7 @@ public class ListaEncadeada {
 			System.out.print(noTemp.getDado() + "; ");
 			noTemp = noTemp.getNext();
 		}
+		
 		System.out.println();
 	}
 }
