@@ -14,13 +14,15 @@ public class PilhaEncadeada {
 	}
 
 	public void push(String dado) {
-		No novoNO = new No(dado);
+		No novoNo = new No(dado);
 		if (topo == null) {
-			topo = novoNO;
+			topo = novoNo;
+			
 		} else {
-			novoNO.setPrev(topo);
-			topo = novoNO;
+			novoNo.setPrev(topo);
+			topo = novoNo;
 		}
+		
 		tamanho++;
 	}
 
@@ -67,6 +69,7 @@ public class PilhaEncadeada {
 		for (int i = tamanho - 1; i >= 0; i--) {
 			System.out.print(pilhaVetor[i].getDado() + " ; ");
 		}
+		
 		System.out.println();
 	}
 }
