@@ -10,6 +10,7 @@ public class ListaDuplamenteEncadeada {
 	public ListaDuplamenteEncadeada() {
 		super();
 		this.head = null;
+		this.end = null;
 		tamanho = 0;
 		this.noTemp = null;
 	}
@@ -139,7 +140,7 @@ public class ListaDuplamenteEncadeada {
 			System.out.print(noTemp.getDado() + "; ");
 			noTemp = noTemp.getNext();
 		}
-		
+
 		System.out.println();
 	}
 }
