@@ -15,7 +15,7 @@ public class PilhaVetor {
 
 	private void tornarMaior() {
 		if (tamanho == vetor.length) {
-			String[] vetorTemp = new String[tamanho + 10];
+			String[] vetorTemp = new String[vetor.length + 10];
 			for (int i = 0; i < tamanho; i++) {
 				vetorTemp[i] = vetor[i];
 			}
@@ -27,7 +27,7 @@ public class PilhaVetor {
 	private void tornarMenor() {
 		if (tamanho < vetor.length - 10) {
 			int j = 0;
-			String[] vetorTemp = new String[tamanho - 10];
+			String[] vetorTemp = new String[vetor.length - 10];
 			for (int i = 0; i < tamanho; i++) {
 				if (vetor[i] != null) {
 					vetorTemp[j] = vetor[i];

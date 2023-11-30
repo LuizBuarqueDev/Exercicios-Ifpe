@@ -19,7 +19,7 @@ public class FilaVetor {
 
 	private void tornarMaior() {
 		if (tamanho == vetor.length || vetor[r] != null) {
-			String[] vetorTemp = new String[tamanho + 10];
+			String[] vetorTemp = new String[vetor.length + 10];
 			for (int i = 0; i < tamanho; i++) {
 				vetorTemp[i] = vetor[(f + i) % vetor.length];
 			}
@@ -31,7 +31,7 @@ public class FilaVetor {
 
 	private void tornarMenor() {
 		if (tamanho < vetor.length - 10) {
-			String[] vetorTemp = new String[tamanho - 10];
+			String[] vetorTemp = new String[vetor.length - 10];
 			for (int i = 0; i < tamanho; i++) {
 				vetorTemp[i] = vetor[(f + i) % vetor.length];
 			}
