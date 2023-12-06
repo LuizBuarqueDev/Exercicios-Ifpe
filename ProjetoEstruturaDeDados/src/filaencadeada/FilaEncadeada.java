@@ -19,8 +19,8 @@ public class FilaEncadeada {
 		if (tamanho == 0) {
 			topo = novoNo;
 			end = novoNo;
-			
-		} else {	
+
+		} else {
 			end.setNext(novoNo);
 			end = novoNo;
 		}
@@ -28,11 +28,12 @@ public class FilaEncadeada {
 	}
 
 	public String dequeue() {
-		if (tamanho <= 0) {
-			throw new NullPointerException("Lista esta vazia");
+		if (isEmpty()) {
+			// Exception
+			System.out.println("Erro lista fazia");
 
 		}
-		
+
 		String elemento = topo.getDado();
 		topo = topo.getNext();
 		tamanho--;
@@ -48,10 +49,11 @@ public class FilaEncadeada {
 	}
 
 	public String front() {
-		if (tamanho <= 0) {
-			throw new NullPointerException("Lista esta vazia");
+		if (isEmpty()) {
+			// Exception
+			System.out.println("Erro lista fazia");
 		}
-		
+
 		return topo.getDado();
 	}
 
