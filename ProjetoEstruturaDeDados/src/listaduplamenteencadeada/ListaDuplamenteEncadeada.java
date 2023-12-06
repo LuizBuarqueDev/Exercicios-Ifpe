@@ -60,10 +60,16 @@ public class ListaDuplamenteEncadeada {
 		NoDuplo novoNo = new NoDuplo(dado);
 
 		if (index == 0) {
-			novoNo.setNext(head);
-			head.setPrev(novoNo);
-			head = novoNo;
-
+			if (tamanho == 0) {
+				head = novoNo;
+				end = novoNo;
+				
+			} else {
+				novoNo.setNext(head);
+				head.setPrev(novoNo);
+				head = novoNo;
+			}
+			
 		} else if (index == tamanho) {
 			end.setNext(novoNo);
 			novoNo.setPrev(end);
